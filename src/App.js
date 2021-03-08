@@ -13,7 +13,7 @@ function App() {
           setRepositories(response.data); //onde vou salvar
 
         })
-    }, [])
+    }, []) //array dependence
   }
   async function handleAddRepository() {
     const response = await api.post ('repositories', {
@@ -25,7 +25,7 @@ function App() {
   }
 
 
-  async function handleRemoveRepository() {
+  async function handleRemoveRepository(id) {
      await api.delete(`repositories/${id}`);
 
      setRepositories(repositories.filter(
